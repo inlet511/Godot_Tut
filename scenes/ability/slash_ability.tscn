@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://by4qtweyfhx0n"]
+
+[ext_resource type="Script" uid="uid://bysj070y4puqg" path="res://scripts/ability/core/ability.gd" id="1_wqbl1"]
+[ext_resource type="Script" uid="uid://bqcvo2v7k7yfw" path="res://scripts/ability/core/ability_spawn_manifest.gd" id="2_6scyu"]
+[ext_resource type="PackedScene" uid="uid://byqjkta6deqrt" path="res://scenes/ability/slash_ability_manifest.tscn" id="3_jabok"]
+[ext_resource type="Script" uid="uid://c07sv604apc5h" path="res://scripts/ability/core/ability_component.gd" id="4_ny4m0"]
+
+[node name="SlashAbility" type="Node" unique_id=608006422]
+script = ExtResource("1_wqbl1")
+
+[node name="SpawnManifest" type="Node" parent="." unique_id=335895672]
+script = ExtResource("2_6scyu")
+manifest_scene = ExtResource("3_jabok")
+set_as_child = true
+
+[node name="PushBack" type="Node" parent="." unique_id=1883231979]
+script = ExtResource("4_ny4m0")
