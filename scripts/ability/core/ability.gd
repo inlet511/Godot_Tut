@@ -1,11 +1,13 @@
 class_name Ability
 extends Node
 
-func activate(entity: Entity):
-	print("Activate ability: ", self.name)
-	_activate_component(entity)
+@export var cooldown:float = 2.0
 
-func _activate_component(entity: Entity):
+func activate(entity: Entity):
+	var context = AbilityContext.new(entity, self)
+	_activate_component(context)
+
+func _activate_component(context: AbilityContext):
 	for child in get_children():
 		if child is AbilityComponent:
-			child.activate(entity)
+			child.activate(context)

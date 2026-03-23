@@ -4,9 +4,21 @@ extends Entity
 @export var speed: float = 20
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ability_controller: AbilityController = $AbilityController
+@onready var weapon : Node2D = $Weapon
+
 var is_moving = false
+var weapon_right_pos:Vector2
+var weapon_left_pos: Vector2
+var weapon_right_angle: float
+var weapon_left_angle: float
 
+func _ready():
+	weapon_right_pos = weapon.position
+	weapon_left_pos = Vector2(-weapon_right_pos.x, weapon_right_pos.y)
+	weapon_right_angle = weapon.rotation
+	weapon_left_angle = -weapon.rotation
 
+	
 func _process(delta: float) -> void:	
 	_handle_movement(delta)
 	_handle_animation()
@@ -22,8 +34,12 @@ func _handle_movement(delta: float):
 	if movement.length()>0:		
 		if horizontal > 0:
 			animated_sprite.flip_h = false
+			weapon.position = weapon_right_pos
+			#weapon.rotation = weapon_right_angle
 		elif horizontal < 0:
 			animated_sprite.flip_h = true
+			weapon.position = weapon_left_pos
+			#weapon.rotation = weapon_left_angle
 		is_moving = true
 	else:
 		is_moving = false
