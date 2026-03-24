@@ -1,12 +1,13 @@
 class_name Entity
 extends Node2D
 
+@onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func play_animation(anim_name:String):
+	animated_sprite.play(anim_name)

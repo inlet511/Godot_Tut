@@ -1,8 +1,8 @@
+class_name Player
 extends Entity
 
 
 @export var speed: float = 20
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ability_controller: AbilityController = $AbilityController
 @onready var weapon : Node2D = $Weapon
 
@@ -13,6 +13,8 @@ var weapon_right_angle: float
 var weapon_left_angle: float
 
 func _ready():
+	add_to_group("Player")
+	super._ready()
 	weapon_right_pos = weapon.position
 	weapon_left_pos = Vector2(-weapon_right_pos.x, weapon_right_pos.y)
 	weapon_right_angle = weapon.rotation
@@ -20,6 +22,7 @@ func _ready():
 
 	
 func _process(delta: float) -> void:	
+	super._process(delta)
 	_handle_movement(delta)
 	_handle_animation()
 	_handle_abilities()

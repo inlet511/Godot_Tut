@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c4a5w0sxy2agp"]
+
+[ext_resource type="Script" uid="uid://bysj070y4puqg" path="res://scripts/ability/core/ability.gd" id="1_gxla7"]
+[ext_resource type="Script" uid="uid://kuee0j1gi3ww" path="res://scripts/ability/component/ability_animation_runner.gd" id="2_isrng"]
+
+[node name="SkeletonSlash" type="Node2D" unique_id=63014591]
+script = ExtResource("1_gxla7")
+
+[node name="AbilityAnimationRunner" type="Node" parent="." unique_id=1565703366]
+script = ExtResource("2_isrng")
+metadata/_custom_type_script = "uid://kuee0j1gi3ww"

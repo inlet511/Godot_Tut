@@ -126,7 +126,7 @@ follow_target = NodePath("../Player")
 [node name="Player" parent="." unique_id=663228779 instance=ExtResource("1_o5qli")]
 z_index = 1
 position = Vector2(18, -1)
-speed = 50.0
+speed = 100.0
 
 [node name="Map" type="Node" parent="." unique_id=1594778294]
 
