@@ -109,7 +109,6 @@ animations = [{
 
 [node name="Player" type="Node2D" unique_id=1813389937]
 script = ExtResource("1_g2els")
-speed = null
 
 [node name="Weapon" type="Sprite2D" parent="." unique_id=537507785]
 texture_filter = 1

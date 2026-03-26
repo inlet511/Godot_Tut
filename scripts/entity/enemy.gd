@@ -20,7 +20,7 @@ func _ready():
 func _process(delta:float):	
 	_handle_movement(delta)	
 	_handle_face()
-	#_handle_animation()
+	_handle_animation()
 
 func _handle_movement(delta:float):
 	if player == null: return
@@ -32,10 +32,11 @@ func _handle_movement(delta:float):
 		ability_controller.trigger_ability_by_idx(0)
 
 func _handle_animation():
-	if current_speed <= stop_distance:
-		animated_sprite.play("idle")
+	if distance <= stop_distance:
+		play_animation(AnimationWrapper.new("idle",false))
 	else:
-		animated_sprite.play("walk")
+		play_animation(AnimationWrapper.new("walk",false))
+
 
 func _handle_face():
 	var rel_x = player.global_position.x - global_position.x

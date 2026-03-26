@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bysj070y4puqg" path="res://scripts/ability/core/ability.gd" id="1_gxla7"]
 [ext_resource type="Script" uid="uid://kuee0j1gi3ww" path="res://scripts/ability/component/ability_animation_runner.gd" id="2_isrng"]
+[ext_resource type="Script" uid="uid://dmnrhelsexh1l" path="res://scripts/ability/component/ability_target_player.gd" id="3_8vteh"]
+[ext_resource type="Script" uid="uid://d20wn3075yl5s" path="res://scripts/ability/component/ability_deal_damage.gd" id="4_8gbtf"]
 
 [node name="SkeletonSlash" type="Node2D" unique_id=63014591]
 script = ExtResource("1_gxla7")
@@ -9,3 +11,11 @@ script = ExtResource("1_gxla7")
 [node name="AbilityAnimationRunner" type="Node" parent="." unique_id=1565703366]
 script = ExtResource("2_isrng")
 metadata/_custom_type_script = "uid://kuee0j1gi3ww"
+
+[node name="AbilityTargetPlayer" type="Node" parent="." unique_id=1350942370]
+script = ExtResource("3_8vteh")
+metadata/_custom_type_script = "uid://dmnrhelsexh1l"
+
+[node name="AbilityDealDamage" type="Node" parent="." unique_id=1072160863]
+script = ExtResource("4_8gbtf")
+metadata/_custom_type_script = "uid://d20wn3075yl5s"

@@ -49,9 +49,9 @@ func _handle_movement(delta: float):
 
 func _handle_animation():
 	if(is_moving):
-		animated_sprite.play("run")
+		play_animation(AnimationWrapper.new("run"))
 	else:
-		animated_sprite.play("idle")
+		play_animation(AnimationWrapper.new("idle"))
 
 func _handle_abilities():
 	if Input.is_action_just_pressed("ability_1"):

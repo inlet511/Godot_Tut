@@ -29,7 +29,6 @@ func _trigger_ability(ability:Ability):
 	
 	# 如果在冷却,直接退出
 	if cooldowns.get(ability,0.0) > 0.0:
-		print(ability.name + " is on cooldown")
 		return
 		
 	ability.activate(player)
