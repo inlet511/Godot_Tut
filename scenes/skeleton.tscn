@@ -275,6 +275,7 @@ z_index = 100
 script = ExtResource("1_txkty")
 max_speed = 20.0
 stop_distance = 20.0
+max_health = 30.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=948784880]
 texture_filter = 1

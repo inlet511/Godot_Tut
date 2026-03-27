@@ -3,12 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://c73b10ln54ac1" path="res://assets/images/AnimationSheet_Character.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://vu7ogh5wxuno" path="res://scripts/entity/player.gd" id="1_g2els"]
 [ext_resource type="Script" uid="uid://ck3abbm7udxhd" path="res://scripts/ability/core/ability_controller.gd" id="3_qhqgy"]
+[ext_resource type="Shader" uid="uid://bg7tqesgnje8a" path="res://shaders/entity.gdshader" id="3_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://by4qtweyfhx0n" path="res://scenes/ability/slash_ability.tscn" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://2kxnw5bxbm7d" path="res://assets/images/melee_attack.png" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
 atlas = ExtResource("5_qlg0r")
 region = Rect2(69, 0, 7, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjrip"]
+shader = ExtResource("3_tuyoq")
+shader_parameter/hurt_color = Vector4(1, 1, 1, 1)
+shader_parameter/is_hurt = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -109,6 +115,7 @@ animations = [{
 
 [node name="Player" type="Node2D" unique_id=1813389937]
 script = ExtResource("1_g2els")
+max_health = 100.0
 
 [node name="Weapon" type="Sprite2D" parent="." unique_id=537507785]
 texture_filter = 1
@@ -118,6 +125,7 @@ texture = SubResource("AtlasTexture_f1ej7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2008267882]
 texture_filter = 1
+material = SubResource("ShaderMaterial_fjrip")
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"run"
 autoplay = "idle"

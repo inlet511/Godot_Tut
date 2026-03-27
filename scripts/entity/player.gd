@@ -60,4 +60,6 @@ func _handle_abilities():
 		ability_controller.trigger_ability_by_idx(1)
 	if Input.is_action_just_pressed("ability_3"):
 		ability_controller.trigger_ability_by_idx(2)
-	
+
+func show_damage_taken_fx():
+	pass

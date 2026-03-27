@@ -10,8 +10,6 @@ var distance: float
 @export var stop_distance: float = 5
 @onready var ability_controller: AbilityController = $AbilityController
 
-
-
 func _ready():
 	super._ready()
 	player = get_tree().get_first_node_in_group("Player")
